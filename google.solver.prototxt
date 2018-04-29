@@ -1,0 +1,16 @@
+net: "google.train_val.prototxt"
+test_iter: 200
+test_interval: 250
+test_initialization: false
+display: 20
+average_loss: 40
+base_lr: 0.01
+lr_policy: "step"
+stepsize: 100000
+gamma: 0.96
+max_iter: 520
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 250
+snapshot_prefix: "snap"
+solver_mode: CPU
