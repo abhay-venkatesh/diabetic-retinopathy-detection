@@ -1,7 +1,9 @@
 import sys
+caffe_root = "../caffe/python/"
+sys.path.insert(0, caffe_root)
+
 from caffe.proto import caffe_pb2
 import numpy as np
-
 
 def mean_blobproto_to_array(blob):
     return np.array(blob.data).reshape(
@@ -16,7 +18,7 @@ blob.ParseFromString(data)
 
 nparray = mean_blobproto_to_array(blob)
 r = nparray.mean(axis=(1,2))
-print list(r)
+print(list(r))
 f = file(out_file, "wb")
 np.save(f, nparray)
 f.close()

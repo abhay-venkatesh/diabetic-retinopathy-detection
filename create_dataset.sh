@@ -25,7 +25,7 @@ echo "Creating train lmdb..."
 
 mkdir -p $EXAMPLE
 
-GLOG_logtostderr=1 convert_imageset.bin \
+GLOG_logtostderr=1 ../caffe/build/tools/convert_imageset \
     --resize_height=$RESIZE_HEIGHT \
     --resize_width=$RESIZE_WIDTH \
     --shuffle \
@@ -35,7 +35,7 @@ GLOG_logtostderr=1 convert_imageset.bin \
 
 echo "Creating test lmdb..."
 
-GLOG_logtostderr=1 convert_imageset.bin \
+GLOG_logtostderr=1 ../caffe/build/tools/convert_imageset \
     --resize_height=$RESIZE_HEIGHT \
     --resize_width=$RESIZE_WIDTH \
     --shuffle \
@@ -45,7 +45,7 @@ GLOG_logtostderr=1 convert_imageset.bin \
 
 echo "Done."
 
-compute_image_mean.bin $EXAMPLE/$EXAMPLE"_train_lmdb" \
+../caffe/build/tools/compute_image_mean $EXAMPLE/$EXAMPLE"_train_lmdb" \
   $EXAMPLE/$EXAMPLE"_train_mean.binaryproto"
 echo "Create Mean."
 
