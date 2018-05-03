@@ -71,12 +71,14 @@ def graph_accuracies():
 
     plt.ylabel('Accuracies')
     plt.xlabel('Epochs')
+    plt.suptitle('GoogLeNet')
     plt.savefig("googlenet-accuracies.png")
 
 def graph_logfile(iterations, losses):
     plt.plot(iterations, losses)
     plt.ylabel('Losses')
     plt.xlabel('Iterations')
+    plt.suptitle('GoogLeNet')
     plt.savefig(INPUTS[0] + "-graph.png")
 
 def write_to_file(iterations, losses):
@@ -87,9 +89,9 @@ def write_to_file(iterations, losses):
 
 def main():
     iterations, losses = parse_logfile()
-    graph_logfile(iterations, losses)
+    # graph_logfile(iterations, losses)
     # write_to_file(iterations, losses)
-    # graph_accuracies()
+    graph_accuracies()
 
 
 if __name__ == '__main__':
