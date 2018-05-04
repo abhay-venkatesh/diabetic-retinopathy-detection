@@ -28,6 +28,8 @@ def parse_logfile():
 
 def graph_logfile(iterations, losses):
     plt.plot(iterations, losses)
+    plt.ylabel('Losses')
+    plt.xlabel('Iterations')
     plt.savefig(INPUTS[0] + "-graph.png")
 
 def write_to_file(iterations, losses):
@@ -39,7 +41,7 @@ def write_to_file(iterations, losses):
 def main():
     iterations, losses = parse_logfile()
     graph_logfile(iterations, losses)
-    write_to_file(iterations, losses)
+    # write_to_file(iterations, losses)
 
 
 if __name__ == '__main__':
