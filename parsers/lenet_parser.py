@@ -30,6 +30,7 @@ def graph_logfile(iterations, losses):
     plt.plot(iterations, losses)
     plt.ylabel('Losses')
     plt.xlabel('Iterations')
+    plt.suptitle('LeNet')
     plt.savefig(INPUTS[0] + "-graph.png")
 
 def write_to_file(iterations, losses):
